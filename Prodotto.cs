@@ -1,12 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-
-
-
-
-
-
-
 class Prodotto
 {
     int codice = 123;
@@ -93,7 +86,7 @@ class Prodotto
     // GET PREZZO CON IVA
     public void getPrezzoConIva()
     {
-        double prezzoiva = Math.Round(prezzo + ((prezzo * 22) / 100), 2);
+        double prezzoiva = Math.Round(prezzo + ((prezzo * iva) / 100), 2);
         Console.WriteLine("Prezzo con Iva: " + prezzoiva);
     }
 
