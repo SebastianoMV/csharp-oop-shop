@@ -20,7 +20,7 @@ class Prodotto
     public Prodotto(string nome, string descrizione, double prezzo, int iva)
     {
         Random random = new Random( );
-        this.codice = random.Next(1, 123445567);
+        this.codice = random.Next(1, 123445);
         this.nome = nome;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
@@ -102,6 +102,18 @@ class Prodotto
     {
         string nomeEsteso = codice + nome;
         Console.WriteLine("Nome esteso: " + nomeEsteso);
+    }
+
+    //BONUS PAD LEFT
+    public void getCodicePad()
+    {
+       
+        string codicePad = codice.ToString();
+        while(codicePad.Length < 8)
+        {
+            codicePad = "0" + codicePad;
+        }
+        Console.WriteLine(codicePad);
     }
 };
 

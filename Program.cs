@@ -3,6 +3,7 @@ Console.WriteLine("OOP SHOP");
 
 
 Prodotto prodotto = new Prodotto("pippo", "ciao come stai", 20.99 , 22);
+prodotto.getCodicePad();
 
 prodotto.getProdotto();
 
