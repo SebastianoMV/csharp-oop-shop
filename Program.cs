@@ -2,95 +2,57 @@
 Console.WriteLine("OOP SHOP");
 
 
-Prodotto prodotto = new Prodotto();
+Prodotto prodotto = new Prodotto("pippo", "ciao come stai", 20.99 , 22);
 
-prodotto.getCodice();
+prodotto.getProdotto();
 
-prodotto.setNome();
-
-prodotto.getNome();
-
-prodotto.getPrezzo();
 prodotto.getPrezzoConIva();
 
 prodotto.getNomeEsteso();
 
-class Prodotto
+bool flagChange = false;
+string scelta;
+
+Console.WriteLine("vuoi cambiare qualcosa? [si,no]");
+scelta = Console.ReadLine();
+if(scelta == "si")
 {
-    int codice = 123;
-    string nome = "Scarpe";
-    string descrizione = "scarpe blu taglia 44";
-    decimal prezzo = 50.99m;
-    int iva = 22;
-
-
-    //GET
-    public void getCodice()
-    {
-        Console.WriteLine(codice);
-    }
-
-    public void getNome()
-    {
-        Console.WriteLine(nome);
-    }
-
-    public void getDescrizione()
-    {
-        Console.WriteLine(descrizione);
-    }
-
-    public void getPrezzo()
-    {
-        Console.WriteLine(prezzo);
-    }
-
-
-    public void getIva()
-    {
-        Console.WriteLine(iva);
-    }
-
-    //SET
-
-    public string setNome()
-    {
-        nome = Console.ReadLine();
-        return nome;
-    }
-
-    public string setDescrizione()
-    {
-        descrizione = Console.ReadLine();
-        return descrizione;
-    }
-
-    public decimal setPrezzo()
-    {
-        prezzo = decimal.Parse(Console.ReadLine());
-        return prezzo;
-    }
-
-    public int setIva()
-    {
-        iva = Int32.Parse(Console.ReadLine());
-        return iva;
-    }
-
-
-    // GET PREZZO CON IVA
-    public void getPrezzoConIva()
-    {
-        decimal prezzoiva = Math.Round(prezzo + ((prezzo * 22) / 100), 2);
-        Console.WriteLine("Prezzo con Iva: " + prezzoiva);
-    }
-
-    // GET NOME ESTESO
-    public void getNomeEsteso()
-    {
-        string nomeEsteso = codice + nome;
-        Console.WriteLine("Nome esteso: " + nomeEsteso);
-    }
+    flagChange = true;
 };
+
+while (flagChange)
+{
+    Console.WriteLine("Cosa vuoi cambiare? [nome,descrizione,prezzo,iva]");
+    scelta= Console.ReadLine();
+    if (scelta == "nome")
+    {
+        prodotto.setNome();
+    }else if (scelta == "descrizione")
+    {
+        prodotto.setDescrizione();
+    }else if (scelta == "prezzo")
+    {
+        prodotto.setPrezzo();
+    }else if (scelta == "iva")
+    {
+        prodotto.setIva();
+    }
+    else
+    {
+        Console.WriteLine("Scelta non valida.");
+    }
+
+    Console.WriteLine("vuoi cambiare altro? [si,no]");
+    scelta = Console.ReadLine();
+
+    if (scelta == "no")
+    {
+        flagChange = false;
+        prodotto.getProdotto();
+    };
+
+    
+};
+
 
 
