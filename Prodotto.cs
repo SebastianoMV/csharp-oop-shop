@@ -65,27 +65,27 @@ class Prodotto
 
     //SET
 
-    public string setNome()
+    public string setNome(string nomeNuovo)
     {
-        nome = Console.ReadLine();
+        nome = nomeNuovo;
         return nome;
     }
 
-    public string setDescrizione()
+    public string setDescrizione(string descrizioneNuova)
     {
-        descrizione = Console.ReadLine();
+        descrizione = descrizioneNuova;
         return descrizione;
     }
 
-    public double setPrezzo()
+    public double setPrezzo(double prezzoNuovo)
     {
-        prezzo = double.Parse(Console.ReadLine());
+        prezzo = prezzoNuovo;
         return prezzo;
     }
 
-    public int setIva()
+    public int setIva(int ivaNuova)
     {
-        iva = Int32.Parse(Console.ReadLine());
+        iva = ivaNuova;
         return iva;
     }
 

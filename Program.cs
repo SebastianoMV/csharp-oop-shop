@@ -27,16 +27,24 @@ while (flagChange)
     scelta= Console.ReadLine();
     if (scelta == "nome")
     {
-        prodotto.setNome();
+        string s = Console.ReadLine();
+        prodotto.setNome(s);
+
     }else if (scelta == "descrizione")
     {
-        prodotto.setDescrizione();
-    }else if (scelta == "prezzo")
+        string s = Console.ReadLine();
+        prodotto.setDescrizione(s);
+
+    }
+    else if (scelta == "prezzo")
     {
-        prodotto.setPrezzo();
-    }else if (scelta == "iva")
+        double prezzoNew = double.Parse(Console.ReadLine());
+        prodotto.setPrezzo(prezzoNew);
+    }
+    else if (scelta == "iva")
     {
-        prodotto.setIva();
+        int ivaNew = Int32.Parse(Console.ReadLine());
+        prodotto.setIva(ivaNew);
     }
     else
     {
